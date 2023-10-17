@@ -21,7 +21,8 @@ public class Application {
             EventoDao edem = new EventoDao(em);
             //Evento rock = new Evento("Rock and Roll", LocalDate.of(2023, 11,01), Type.PUBBLICO, 1000);
             //edem.saveNewEvent(rock);
-            System.out.println(edem.searchById(2));
+            //System.out.println(edem.searchById(2));
+            edem.removeById(2);
 
         }catch (Exception ex) {
             System.err.println(ex.getMessage());

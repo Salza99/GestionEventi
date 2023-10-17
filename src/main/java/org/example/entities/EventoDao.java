@@ -21,4 +21,17 @@ public class EventoDao {
     public Evento searchById(long id) {
         return em.find(Evento.class,id);
     }
+    public void removeById(long id){
+        Evento a = em.find(Evento.class, id);
+        try {
+            EntityTransaction transaction = em.getTransaction();
+            transaction.begin();
+            em.remove(a);
+            transaction.commit();
+            System.out.println("evento rimosso con successo");
+        }catch (Exception ex) {
+            System.err.println(ex.getMessage());
+            System.err.println("l'evento con id " + id + " non esiste");
+        }
+    }
 }
