@@ -19,10 +19,16 @@ public class Application {
         try {
 
             EventoDao edem = new EventoDao(em);
-            //Evento rock = new Evento("Rock and Roll", LocalDate.of(2023, 11,01), Type.PUBBLICO, 1000);
-            //edem.saveNewEvent(rock);
-            //System.out.println(edem.searchById(2));
-            edem.removeById(2);
+            //Evento pop = new Evento("Pop", LocalDate.of(2023, 12,01), Type.PUBBLICO, 500);
+            //edem.saveNewEvent(pop);
+            Evento found = edem.searchById(3);
+            if (found != null) {
+                found.setTitolo("Poppss");
+                System.out.println(found);
+                em.refresh(found);
+                System.out.println(found);
+            }
+            //edem.removeById(2);
 
         }catch (Exception ex) {
             System.err.println(ex.getMessage());
