@@ -33,4 +33,47 @@ public class Evento {
 
     //getter e setter
 
+    public String getTitolo() {
+        return titolo;
+    }
+
+    public void setTitolo(String titolo) {
+        this.titolo = titolo;
+    }
+
+    public LocalDate getDataEvento() {
+        return dataEvento;
+    }
+
+    public void setDataEvento(LocalDate dataEvento) {
+        this.dataEvento = dataEvento;
+    }
+
+    public Type getTipoEvento() {
+        return tipoEvento;
+    }
+
+    public void setTipoEvento(Type tipoEvento) {
+        this.tipoEvento = tipoEvento;
+    }
+
+    public Integer getNumeroMassimoPartecipanti() {
+        return numeroMassimoPartecipanti;
+    }
+
+    public void setNumeroMassimoPartecipanti(Integer numeroMassimoPartecipanti) {
+        this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
+    }
+    //override
+
+    @Override
+    public String toString() {
+        return "Evento{" +
+                "id=" + id +
+                ", titolo='" + titolo + '\'' +
+                ", dataEvento=" + dataEvento +
+                ", tipoEvento=" + tipoEvento +
+                ", numeroMassimoPartecipanti=" + numeroMassimoPartecipanti +
+                '}';
+    }
 }
